@@ -1,0 +1,8 @@
+#!/bin/bash
+
+/usr/bin/redis-server
+/usr/sbin/regist.py > /dev/null &
+/etc/init.d/nginx start
+/etc/init.d/nginx reload
+/usr/sbin/sshd -D
+tail -f /var/null
